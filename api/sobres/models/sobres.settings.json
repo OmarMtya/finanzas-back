@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sobres",
+  "info": {
+    "name": "sobres",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "concepto": {
+      "type": "string"
+    },
+    "usuario": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "sobres"
+    },
+    "cantidad": {
+      "type": "decimal"
+    },
+    "pagos": {
+      "type": "json"
+    }
+  }
+}
