@@ -15,20 +15,18 @@ module.exports = {
       entities = await strapi.services.sobres.find(ctx.query);
     }
 
-    let sobresLimpios = []; // Arreglo de sobres que no se han pagado este mes
 
     entities.forEach(sobre => {
       if(sobre.pagos && sobre.pagos.length > 0) { // Si existen pagos registrados
+        console.log(sobre.pagos);
         let fechaPagado = new Date(sobre.pagos[sobre.pagos.length - 1].fecha);
         let fechaActual = new Date();
-        if(fechaPagado.getMonth() !== fechaActual.getMonth()) { // Si el mes de la fecha de pago es diferente al mes actual
-          sobresLimpios.push(sobre);
-        }
+        sobre.pagado = fechaPagado.getMonth() === fechaActual.getMonth();
       }else{
-        sobresLimpios.push(sobre);
+        sobre.pagado = false;
       }
     });
 
-    return sobresLimpios.map(entity => sanitizeEntity(entity, { model: strapi.models.sobres }));
+    return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.sobres }));
   },
 };
