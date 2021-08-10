@@ -65,6 +65,10 @@
     "sobres": {
       "via": "usuario",
       "collection": "sobres"
+    },
+    "cartera": {
+      "via": "usuario",
+      "collection": "carteras"
     }
   }
 }

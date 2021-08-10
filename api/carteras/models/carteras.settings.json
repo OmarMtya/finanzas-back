@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "sobres",
+  "collectionName": "carteras",
   "info": {
-    "name": "sobres",
+    "name": "carteras",
     "description": ""
   },
   "options": {
@@ -12,19 +12,20 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "concepto": {
-      "type": "string"
+    "conceptos": {
+      "type": "dynamiczone",
+      "components": [
+        "cartera.concepto",
+        "cartera.credito"
+      ]
     },
     "usuario": {
-      "via": "sobres",
+      "via": "cartera",
       "plugin": "users-permissions",
       "model": "user"
     },
-    "cantidad": {
+    "ingreso_mensual": {
       "type": "decimal"
-    },
-    "pagos": {
-      "type": "json"
     }
   }
 }

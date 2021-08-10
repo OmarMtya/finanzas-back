@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_cartera_creditos",
+  "info": {
+    "name": "credito",
+    "icon": "money-bill-wave"
+  },
+  "options": {},
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "richtext"
+    },
+    "valor": {
+      "type": "decimal"
+    }
+  }
+}

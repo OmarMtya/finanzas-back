@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_cartera_conceptos",
+  "info": {
+    "name": "concepto",
+    "icon": "comments-dollar"
+  },
+  "options": {},
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "richtext"
+    },
+    "valor": {
+      "type": "decimal"
+    }
+  }
+}
